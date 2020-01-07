@@ -1,1 +1,1 @@
-program
+Java study follow 생활코딩
