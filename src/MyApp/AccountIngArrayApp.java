@@ -1,11 +1,11 @@
 package MyApp;
 
-public class AccountIngApp {
+public class AccountIngArrayApp {
 
 	public static void main(String[] args) {
 
 		// 공급가
-		double valueOfSupply = Double.parseDouble(args[0]);
+		double valueOfSupply = 50000.0;
 		// 부가세 비율
 		double vatRate = 0.1;
 		// 비용 비율
@@ -18,12 +18,18 @@ public class AccountIngApp {
 		double expense = valueOfSupply * expenseRate;
 		// 수익
 		double income = valueOfSupply - expense;
+
+		double[] dividendRates = new double[3];
+		dividendRates[0] = 0.5;
+		dividendRates[1] = 0.3;
+		dividendRates[2] = 0.2;
+
 		// 배당1
-		double dividend1 = income * 0.5;
+		double dividend1 = income * dividendRates[0];
 		// 배당2
-		double dividend2 = income * 0.3;
+		double dividend2 = income * dividendRates[0];
 		// 배당3
-		double dividend3 = income * 0.2;
+		double dividend3 = income * dividendRates[0];
 
 		System.out.println("Value of Supply : " + valueOfSupply);
 
