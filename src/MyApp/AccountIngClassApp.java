@@ -2,11 +2,11 @@ package MyApp;
 
 class Accounting {
 	// 공급가
-	public static double valueOfSupply;
+	public double valueOfSupply;
 	// 부가세 비율
-	public static double vatRate;
+	public  double vatRate;
 	// 비용 비율
-	public static double expenseRate;
+	public  double expenseRate;
 	// 부가세
 	double vat = getVAT();
 	// 소바자 가격
@@ -22,7 +22,7 @@ class Accounting {
 	// 배당3
 	double dividend3 = getDividend3();
 
-	public static void print() {
+	public  void print() {
 		System.out.println("Value of Supply : " + valueOfSupply);
 
 		System.out.println("VAT : " + getVAT());
@@ -40,37 +40,37 @@ class Accounting {
 		System.out.println("Dividend 3 : " + getDividend3());
 	}
 
-	private static double getDividend1() {
+	public  double getDividend1() {
 		double dividend1 = getIncome() * 0.5;
 		return dividend1;
 	}
 
-	private static double getDividend2() {
+	public  double getDividend2() {
 		double dividend1 = getIncome() * 0.3;
 		return dividend1;
 	}
 
-	private static double getDividend3() {
+	public  double getDividend3() {
 		double dividend1 = getIncome() * 0.2;
 		return dividend1;
 	}
 
-	private static double getIncome() {
+	public  double getIncome() {
 		double income = valueOfSupply - getExpense();
 		return income;
 	}
 
-	private static double getExpense() {
+	public  double getExpense() {
 		double expense = valueOfSupply * expenseRate;
 		return expense;
 	}
 
-	private static double getTotal() {
+	public  double getTotal() {
 		double total = valueOfSupply + getVAT();
 		return total;
 	}
 
-	private static double getVAT() {
+	public  double getVAT() {
 		return valueOfSupply * vatRate;
 	}
 }
@@ -79,11 +79,26 @@ public class AccountIngClassApp {
 
 	public static void main(String[] args) {
 
-		Accounting.valueOfSupply = 20000.0;
-		Accounting.vatRate = 0.1;
-		Accounting.expenseRate = 0.3;
+//		Accounting.valueOfSupply = 20000.0;
+//		Accounting.vatRate = 0.1;
+//		Accounting.expenseRate = 0.3;
+//
+//		Accounting.print();
 
-		Accounting.print();
+		Accounting a1 = new Accounting();
+
+		a1.valueOfSupply = 20000.0;
+		a1.vatRate = 0.1;
+		a1.expenseRate = 0.3;
+		a1.print();
+
+		Accounting a2 = new Accounting();
+
+		a2.valueOfSupply = 40000.0;
+		a2.vatRate = 0.05;
+		a2.expenseRate = 0.2;
+		a2.print();
+
 	}
 
 }
